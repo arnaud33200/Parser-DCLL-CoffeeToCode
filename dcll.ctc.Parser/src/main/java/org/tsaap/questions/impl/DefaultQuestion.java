@@ -16,7 +16,12 @@
 
 package org.tsaap.questions.impl;
 
-import org.tsaap.questions.*;
+import org.tsaap.questions.AnswerBlock;
+import org.tsaap.questions.Question;
+import org.tsaap.questions.QuestionBlock;
+import org.tsaap.questions.QuestionType;
+import org.tsaap.questions.TextBlock;
+import org.tsaap.questions.impl.*;
 
 import java.util.ArrayList;
 import java.util.List;

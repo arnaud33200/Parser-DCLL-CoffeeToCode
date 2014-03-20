@@ -24,5 +24,4 @@ public class QuizReaderException extends Exception {
     public QuizReaderException(String message) {
         super(message);
     }
-
 }
