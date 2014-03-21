@@ -32,6 +32,11 @@
 						</reports>
 					</reportSet>
 				</reportSets>
+				<configuration>
+		<linkXRef>true</linkXRef>
+		<sourceEncoding>UTF-8</sourceEncoding>
+		<configLocation>CheckStyle_Config_C2C.xml</configLocation>					
+	</configuration>
         </plugin>
         <plugin>
         	<groupId>org.codehaus.mojo</groupId>
