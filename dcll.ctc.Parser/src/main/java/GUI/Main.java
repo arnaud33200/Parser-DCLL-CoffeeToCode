@@ -23,7 +23,7 @@ public class Main {
 		parser.setInput("{Question 1 : Est ce que Binta doit se couper les cheveux : |type=\"()\"}\n" +
 						"- Oui\n"+
 						"- Non\n"+
-						"+ Ptetre\n"+
+						"+ Peut être\n"+
 						"\n"+
 						"{Question 2 : Cocher les bonnes reponses.|type=\"[]\"}\n" +
 						"- Une reponse fausse\n"+
