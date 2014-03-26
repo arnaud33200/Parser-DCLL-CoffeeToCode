@@ -31,7 +31,7 @@ public class Main {
 						"+ Une autre reponse juste\n"+
 						"- Une autre reponse fausse\n");
 		
-		//Do not modify this code please, it's 04:25 and I have not slept since yesterday. so b** please
+		//Do not modify this code
 		try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
