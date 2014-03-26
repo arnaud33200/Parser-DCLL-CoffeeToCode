@@ -75,7 +75,7 @@ public class Window extends JFrame {
         setTitle("Wikimedia Quiz");
         bValider.setText("Valider");
         bReset.setText("Réinitialiser");
-        information.setText("Information : validate button is not implemented yet, so Arnaud make it work, I have to sleep now, it's 05:00 :-P");
+        information.setText("Résultat :");
       
         intializeQuizView();
         jScrollPane1.setViewportView(questionsPanel);
@@ -132,10 +132,16 @@ public class Window extends JFrame {
 	 * this method compute the score
 	 * @param evt
 	 */
-    private void bValiderActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void bValiderActionPerformed(java.awt.event.ActionEvent evt) { 
+    	String resultat = "<html><u><b>Résultat:</b></u>";
+    	int n = 1;
         for(QuestionJPanel question : panelList) {
-        	question.compute();
+        	float score = question.compute() * 100;
+        	resultat += "- Question " + n + ": <b>" + score + "%</b>";
+        	n++;
         }
+        resultat += "</html>";
+        information.setText(resultat);
     }
     /**
      * this method reset the form
@@ -146,5 +152,6 @@ public class Window extends JFrame {
     	for(QuestionJPanel panel : panelList) {
 			panel.reset();
 		}
+    	information.setText("Résultat :");
     } 
 }
