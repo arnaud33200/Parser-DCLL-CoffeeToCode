@@ -3,6 +3,7 @@
  */
 package GUI;
 
+import GUI.AnswerModel.CheckBoxAnswer;
 import java.util.ArrayList;
 import java.util.List;
 

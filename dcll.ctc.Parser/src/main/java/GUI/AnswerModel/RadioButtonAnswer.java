@@ -1,4 +1,4 @@
-package GUI;
+package GUI.AnswerModel;
 
 import java.awt.Color;
 
