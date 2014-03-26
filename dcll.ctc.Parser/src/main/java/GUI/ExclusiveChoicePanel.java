@@ -25,6 +25,7 @@ public class ExclusiveChoicePanel extends QuestionJPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	private List<ButtonGroup> bgroupList = new ArrayList<ButtonGroup>();
+	private List<RadioButtonAnswer> radioList = new ArrayList<RadioButtonAnswer>();
 
 	public ExclusiveChoicePanel(Question question) {
 		super(question);
@@ -32,8 +33,9 @@ public class ExclusiveChoicePanel extends QuestionJPanel{
 			ButtonGroup group = new ButtonGroup();
 			bgroupList.add(group);
 			for(Answer ans : answerBlock.getAnswerList()) {
-				JRadioButton radioButton = new JRadioButton(ans.getTextValue());
+				RadioButtonAnswer radioButton = new RadioButtonAnswer(ans);
 				group.add(radioButton);
+				radioList.add(radioButton);
 				add(radioButton);
 			}
 		}
@@ -41,14 +43,21 @@ public class ExclusiveChoicePanel extends QuestionJPanel{
 
 	@Override
 	public float compute() {
-		// TODO Auto-generated method stub
-		return 0;
+		float credit = 0;
+		for(RadioButtonAnswer ans : radioList) {
+			float creditans = ans.getCorrection();
+			if( ans.isSelected())
+				credit += creditans;
+		}
+		return credit;
 	}
 
 	public void reset() {
-		// TODO Auto-generated method stub
 		for (ButtonGroup element : bgroupList) {
 			element.clearSelection();
+		}
+		for(RadioButtonAnswer ans : radioList) {
+			ans.resetCorrection();
 		}
 	}
 

@@ -22,13 +22,13 @@ public class MultipleChoicePanel extends QuestionJPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private List<JCheckBox> checkboxList = new ArrayList<JCheckBox>();
+	private List<CheckBoxAnswer> checkboxList = new ArrayList<CheckBoxAnswer>();
 
 	public MultipleChoicePanel(Question question) {
 		super(question);
 		for(AnswerBlock answerBlock : getQuestion().getAnswerBlockList()) { 
 			for(Answer ans : answerBlock.getAnswerList()) {
-				JCheckBox checkbox = new JCheckBox(ans.getTextValue());
+				CheckBoxAnswer checkbox = new CheckBoxAnswer(ans);
 				add(checkbox);
 				checkboxList.add(checkbox);
 			}
@@ -37,15 +37,19 @@ public class MultipleChoicePanel extends QuestionJPanel{
 
 	@Override
 	public float compute() {
-		// TODO Auto-generated method stub
-		return 0;
+		float credit = 0;
+		for (CheckBoxAnswer ans : checkboxList) {
+			float creditans = ans.getCorrection();
+			if( ans.isSelected())
+				credit += creditans;
+		}
+		return credit;
 	}
 
 	@Override
 	public void reset() {
-		// TODO Auto-generated method stub
-		for (JCheckBox element : checkboxList) {
-			element.setSelected(false);
+		for (CheckBoxAnswer ans : checkboxList) {
+			ans.resetCorrection();
 		}
 	}
 

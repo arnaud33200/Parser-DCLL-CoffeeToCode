@@ -133,8 +133,9 @@ public class Window extends JFrame {
 	 * @param evt
 	 */
     private void bValiderActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    	information.setText("We must implement the function to calculate the score, why did you clicked b**");
+        for(QuestionJPanel question : panelList) {
+        	question.compute();
+        }
     }
     /**
      * this method reset the form
