@@ -1,7 +1,7 @@
 /**
  * 
  */
-package application.view;
+package GUI;
 import org.tsaap.questions.Question;
 import javax.swing.BorderFactory;
 
@@ -19,6 +19,7 @@ public abstract class QuestionJPanel extends javax.swing.JPanel {
 
 	/**
      * Creates new form QuestionJPanel
+     * @param question
      */
     public QuestionJPanel(Question question) {
     	this.question = question;

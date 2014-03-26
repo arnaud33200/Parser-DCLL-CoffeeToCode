@@ -1,7 +1,7 @@
 /**
  * 
  */
-package application;
+package dcll.ctc.dcll.ctc.Parser;
 import org.tsaap.questions.Quiz;
 
 /**

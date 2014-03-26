@@ -1,7 +1,7 @@
 /**
  * 
  */
-package application.view;
+package GUI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +40,6 @@ public class Window extends JFrame {
 	public Window(Quiz quiz) {
 		this.quiz = quiz;
 		initComponents();
-
 	}
 	/**
 	 * This method is called from within the initComponents method to set up

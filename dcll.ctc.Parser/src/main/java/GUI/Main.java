@@ -1,10 +1,12 @@
 /**
  * 
  */
-package application;
+package GUI;
 
 
-import application.view.Window;
+import dcll.ctc.dcll.ctc.Parser.NoInputException;
+import dcll.ctc.dcll.ctc.Parser.BadSyntaxException;
+import dcll.ctc.dcll.ctc.Parser.WikiversityParser;
 
 /**
  * @author alpha oumar binta diallo
@@ -18,10 +20,10 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		final WikiversityParser parser = new WikiversityParser();
-		parser.setInput("{Question 1 : Selon vous, H Brada the accelerometer est : |type=\"()\"}\n" +
-						"- Marocain\n"+
-						"- Algerien\n"+
-						"+ Espagnole\n"+
+		parser.setInput("{Question 1 : Est ce que Binta doit se couper les cheveux : |type=\"()\"}\n" +
+						"- Oui\n"+
+						"- Non\n"+
+						"+ Ptetre\n"+
 						"\n"+
 						"{Question 2 : Cocher les bonnes reponses.|type=\"[]\"}\n" +
 						"- Une reponse fausse\n"+
