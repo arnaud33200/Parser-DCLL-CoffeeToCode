@@ -9,16 +9,9 @@ package dcll.ctc.dcll.ctc.Parser;
  */
 public class NoInputException extends Exception {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
 	public NoInputException() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -26,6 +19,5 @@ public class NoInputException extends Exception {
 	 */
 	public NoInputException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 }

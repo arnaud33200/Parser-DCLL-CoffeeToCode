@@ -14,11 +14,7 @@ import dcll.ctc.dcll.ctc.Parser.WikiversityParser;
  */
 public class Main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		final WikiversityParser parser = new WikiversityParser();
 		parser.setInput("{Question 1 : Est ce que Binta doit se couper les cheveux : |type=\"()\"}\n" +
 						"- Oui\n"+
@@ -29,9 +25,14 @@ public class Main {
 						"- Une reponse fausse\n"+
 						"+ Une reponse juste\n"+
 						"+ Une autre reponse juste\n"+
+						"- Une autre reponse fausse\n"+
+						"\n"+
+						"{Question 2 : Cocher les bonnes reponses.|type=\"[]\"}\n" +
+						"- Une reponse fausse\n"+
+						"+ Une reponse juste\n"+
+						"+ Une autre reponse juste\n"+
 						"- Une autre reponse fausse\n");
 		
-		//Do not modify this code
 		try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -48,20 +49,16 @@ public class Main {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
 					new Window(parser.parse()).setVisible(true);
 				} catch (NoInputException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (BadSyntaxException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
             }
         });
-        //end
 	}
 }

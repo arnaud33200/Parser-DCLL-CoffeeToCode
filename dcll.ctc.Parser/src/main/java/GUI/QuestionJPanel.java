@@ -2,8 +2,9 @@
  * 
  */
 package GUI;
-import org.tsaap.questions.Question;
 import javax.swing.BorderFactory;
+
+import org.tsaap.questions.Question;
 
 /**
  * @author alpha oumar binta diallo
@@ -11,9 +12,6 @@ import javax.swing.BorderFactory;
  */
 public abstract class QuestionJPanel extends javax.swing.JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Question question;
 
@@ -23,7 +21,8 @@ public abstract class QuestionJPanel extends javax.swing.JPanel {
      */
     public QuestionJPanel(Question question) {
     	this.question = question;
-    	setBorder(BorderFactory.createTitledBorder(question.getTitle()));
+    	this.setBorder(BorderFactory.createTitledBorder(question.getTitle()));
+    	this.setSize(getPreferredSize());
     }
     /**
      * this method return the question

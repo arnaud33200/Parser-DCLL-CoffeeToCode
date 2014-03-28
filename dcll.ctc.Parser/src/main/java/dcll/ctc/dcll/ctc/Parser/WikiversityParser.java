@@ -37,13 +37,11 @@ public class WikiversityParser implements Parser{
      * @return Quiz
      */
 	public Quiz parse() throws NoInputException, BadSyntaxException {
-		// TODO Auto-generated method stub
 		if(input.isEmpty()){
 			throw new NoInputException("The Input is empty");
 		}
 		DefaultQuiz defQuiz = new DefaultQuiz();
 		for (String str : splitQuestions()) {
-			//Treatment
 			checkInputFormat(str);
 			DefaultQuestion question = new DefaultQuestion();
 			question.setTitle(getQuestionTitle(str));
@@ -51,7 +49,6 @@ public class WikiversityParser implements Parser{
 			question.addAnswerBlock(getAnswerBlock(str));
 			defQuiz.addQuestion(question);
 		}
-		;		
 		return quiz = defQuiz;
 	}
 	/**
@@ -59,7 +56,6 @@ public class WikiversityParser implements Parser{
      * @return Quiz
      */
 	public Quiz getQuiz() {
-		// TODO Auto-generated method stub
 		return quiz;
 	}
 	/**
@@ -67,7 +63,6 @@ public class WikiversityParser implements Parser{
      * @param String
      */
 	public void setInput(String str) {
-		// TODO Auto-generated method stub
 		this.input = str;
 	}
 	/**
@@ -90,12 +85,10 @@ public class WikiversityParser implements Parser{
 				+ LINE_SEPARATOR
 				+ ")*"
 				+ answerFormat, Pattern.DOTALL);
-		//line breaks are not significant Pattern.DOTALL
 		Pattern pBraces = Pattern.compile("^\\{.*\\}", Pattern.DOTALL);
 		Pattern ptype = Pattern.compile("\\|type=\"(\\(\\)|\\[\\])\"\\}");
 		Pattern pQuestionText = Pattern.compile("\\{.+\\|", Pattern.DOTALL);
 		
-		//let's check the input
 		if(!pBraces.matcher(input).find()){
 			throw new BadSyntaxException("Format error, braces missing");
 		}
@@ -108,7 +101,6 @@ public class WikiversityParser implements Parser{
 		if(!pAnswer.matcher(input).find()){
 			throw new BadSyntaxException("Format error, invalid answers");
 		}
-		//is it there's a good answer?
 		if(input.substring(input.indexOf("|type")).indexOf('+') < 0){
 			throw new BadSyntaxException("Format error, A good answer is missing");
 		}
@@ -142,17 +134,16 @@ public class WikiversityParser implements Parser{
 	private AnswerBlock getAnswerBlock(String input){
 		DefaultAnswerBlock answerBlock = new DefaultAnswerBlock();
 		int correctAnswerNber = 0;
-		//index of the end of the question
+
 		String responseBlock = input.substring(input.indexOf(QUESTION_END_REG)
 				+ QUESTION_END_REG.length());
 		String[] response = responseBlock.split(LINE_SEPARATOR);
-		//count the number of correct answers
+
 		for (String str : response) {
 			if(str.charAt(0) == CORRECT_ANSWER){
 				correctAnswerNber++;
 			}
 		}
-		//set the Answers block with percentage and delete (-,+)
 		for (String str : response) {
 			DefaultAnswer ans = new DefaultAnswer();
 			ans.setTextValue(str.substring(2));

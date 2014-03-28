@@ -3,16 +3,16 @@
  */
 package GUI;
 
-import GUI.AnswerModel.RadioButtonAnswer;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JRadioButton;
 
 import org.tsaap.questions.Answer;
 import org.tsaap.questions.AnswerBlock;
 import org.tsaap.questions.Question;
+
+import GUI.AnswerModel.RadioButtonAnswer;
 
 /**
  * @author alpha oumar binta diallo
@@ -20,10 +20,6 @@ import org.tsaap.questions.Question;
  */
 public class ExclusiveChoicePanel extends QuestionJPanel{
 
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private List<ButtonGroup> bgroupList = new ArrayList<ButtonGroup>();
 	private List<RadioButtonAnswer> radioList = new ArrayList<RadioButtonAnswer>();

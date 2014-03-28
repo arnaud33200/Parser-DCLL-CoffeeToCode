@@ -9,9 +9,9 @@ import java.util.List;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import org.tsaap.questions.Question;
 import org.tsaap.questions.Quiz;
@@ -22,15 +22,12 @@ import org.tsaap.questions.Quiz;
  */
 public class Window extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Quiz quiz;
     private JButton bReset;
     private JButton bValider;
-    private JScrollPane jScrollPane1;
-    private JLabel information;
+    private JScrollPane jScrollPane1, resScroll;
+    private JTextArea information;
     private JPanel questionsPanel;
     private List<QuestionJPanel> panelList = new ArrayList<QuestionJPanel>();
     
@@ -69,19 +66,24 @@ public class Window extends JFrame {
         bValider = new JButton();
         bReset = new JButton();
         jScrollPane1 = new JScrollPane();
-        information = new JLabel();
+        resScroll = new javax.swing.JScrollPane();
+        information = new JTextArea();
         questionsPanel = new JPanel();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Wikimedia Quiz");
         bValider.setText("Valider");
         bReset.setText("Réinitialiser");
-        information.setText("Résultat :");
+        information.setEditable(false);
+        information.setBackground(new java.awt.Color(0, 0, 0));
+        information.setColumns(20);
+        information.setForeground(new java.awt.Color(0, 153, 0));
+        information.setRows(5);
       
         intializeQuizView();
         jScrollPane1.setViewportView(questionsPanel);
+        resScroll.setViewportView(information);
         questionsPanel.setLayout(new BoxLayout(questionsPanel, BoxLayout.Y_AXIS));
         
-        //events
         bValider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bValiderActionPerformed(evt);
@@ -109,16 +111,16 @@ public class Window extends JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(information, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(resScroll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(information, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(resScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bValider)
@@ -133,25 +135,23 @@ public class Window extends JFrame {
 	 * @param evt
 	 */
     private void bValiderActionPerformed(java.awt.event.ActionEvent evt) { 
-    	String resultat = "<html><u><b>Résultat:</b></u>";
+    	String resultat = "";
     	int n = 1;
         for(QuestionJPanel question : panelList) {
         	float score = question.compute() * 100;
-        	resultat += "- Question " + n + ": <b>" + score + "%</b>";
+        	resultat += "- Question " + n + " -> " + score + " %\n";
         	n++;
         }
-        resultat += "</html>";
-        information.setText(resultat);
+        information.append(resultat);
     }
     /**
      * this method reset the form
      * @param evt
      */
     private void bResetActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
     	for(QuestionJPanel panel : panelList) {
 			panel.reset();
 		}
-    	information.setText("Résultat :");
+    	information.setText("");
     } 
 }

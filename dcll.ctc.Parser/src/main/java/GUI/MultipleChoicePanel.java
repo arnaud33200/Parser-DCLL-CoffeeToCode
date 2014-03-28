@@ -3,15 +3,14 @@
  */
 package GUI;
 
-import GUI.AnswerModel.CheckBoxAnswer;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JCheckBox;
 
 import org.tsaap.questions.Answer;
 import org.tsaap.questions.AnswerBlock;
 import org.tsaap.questions.Question;
+
+import GUI.AnswerModel.CheckBoxAnswer;
 
 /**
  * @author alpha oumar binta diallo
@@ -19,9 +18,6 @@ import org.tsaap.questions.Question;
  */
 public class MultipleChoicePanel extends QuestionJPanel{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private List<CheckBoxAnswer> checkboxList = new ArrayList<CheckBoxAnswer>();
 
