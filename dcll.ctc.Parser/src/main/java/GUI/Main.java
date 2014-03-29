@@ -4,6 +4,13 @@
 package GUI;
 
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import dcll.ctc.dcll.ctc.Parser.NoInputException;
 import dcll.ctc.dcll.ctc.Parser.BadSyntaxException;
 import dcll.ctc.dcll.ctc.Parser.WikiversityParser;
@@ -16,22 +23,24 @@ public class Main {
 
 	public static void main(String[] args) {
 		final WikiversityParser parser = new WikiversityParser();
-		parser.setInput("{Question 1 : Est ce que Binta doit se couper les cheveux : |type=\"()\"}\n" +
-						"- Oui\n"+
-						"- Non\n"+
-						"+ Peut être\n"+
-						"\n"+
-						"{Question 2 : Cocher les bonnes reponses.|type=\"[]\"}\n" +
-						"- Une reponse fausse\n"+
-						"+ Une reponse juste\n"+
-						"+ Une autre reponse juste\n"+
-						"- Une autre reponse fausse\n"+
-						"\n"+
-						"{Question 2 : Cocher les bonnes reponses.|type=\"[]\"}\n" +
-						"- Une reponse fausse\n"+
-						"+ Une reponse juste\n"+
-						"+ Une autre reponse juste\n"+
-						"- Une autre reponse fausse\n");
+		BufferedReader br;
+		try {
+			br = new BufferedReader(new InputStreamReader(
+			        new FileInputStream(
+			        new File("test.txt"))));
+			String line, str = "";
+			try {
+				while((line = br.readLine()) != null){
+					str += line + "\n";
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				Window.show_error("Lecture Fichier source", e.getMessage());
+			}
+			parser.setInput(str);
+		} catch (FileNotFoundException e1) {
+			Window.show_error("Chargement Fichier source", e1.getMessage());
+		}
 		
 		try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -54,9 +63,9 @@ public class Main {
                 try {
 					new Window(parser.parse()).setVisible(true);
 				} catch (NoInputException e) {
-					e.printStackTrace();
+					Window.show_error("Parser", e.getMessage());
 				} catch (BadSyntaxException e) {
-					e.printStackTrace();
+					Window.show_error("Parser", e.getMessage());
 				}
             }
         });

@@ -1,0 +1,16 @@
+{Question 1 : Est ce que Binta doit se couper les cheveux : |type="()"}
+- Oui
+- Non
++ Peut être
+
+{Question 2 : Cocher les bonnes reponses.|type="[]"}
+- Une reponse fausse
++ Une reponse juste
++ Une autre reponse juste
+- Une autre reponse fausse
+
+{Question 2 : Cocher les bonnes reponses.|type="[]"}
+- Une reponse fausse
++ Une reponse juste
++ Une autre reponse juste
+- Une autre reponse fausse
