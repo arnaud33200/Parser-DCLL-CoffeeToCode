@@ -9,7 +9,6 @@ import java.util.List;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -38,10 +37,6 @@ public class Window extends JFrame {
 	public Window(Quiz quiz) {
 		this.quiz = quiz;
 		initComponents();
-	}
-	public static void show_error(String title, String message){
-		JOptionPane.showMessageDialog(null, message, title, JOptionPane.ERROR_MESSAGE);
-		System.exit(1);
 	}
 	/**
 	 * This method is called from within the initComponents method to set up
