@@ -1,5 +1,8 @@
 package dcll.ctc.dcll.ctc.parser.gui;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,9 +11,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 import dcll.ctc.dcll.ctc.parser.BadSyntaxException;
 import dcll.ctc.dcll.ctc.parser.NoInputException;
@@ -21,6 +27,10 @@ import dcll.ctc.dcll.ctc.parser.WikiversityParser;
  */
 public final class Main {
     /**
+     * the default file test.
+     */
+    private static final String FILE_TEST = "File_Test/test.txt";
+    /**
      * Default constructor.
      */
     private Main() { }
@@ -29,8 +39,10 @@ public final class Main {
      */
     public static void main(final String[] args) {
         final WikiversityParser parser = new WikiversityParser();
-        parser.setInput(loadFile());
-
+        final JFrame form = new JFrame();
+        JButton bCharger, bOuvrir;
+        bOuvrir = new JButton();
+        bCharger = new JButton();
         try {
             for (UIManager.LookAndFeelInfo info : javax.swing.UIManager
                     .getInstalledLookAndFeels()) {
@@ -52,6 +64,37 @@ public final class Main {
             java.util.logging.Logger.getLogger(Window.class.getName()).log(
                     java.util.logging.Level.SEVERE, null, ex);
         }
+        form.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        form.setTitle("Wikimedia Quiz");
+        form.setSize(form.getPreferredSize());
+        form.setResizable(false);
+        bOuvrir.setText("Charger un fichier");
+        bOuvrir.addActionListener(new ActionListener() {
+            public void actionPerformed(final ActionEvent evt) {
+                parser.setInput(getFileContent(getFilePath()));
+                form.setVisible(false);
+                showQuiz(parser);
+            }
+        });
+        bCharger.setText("Fichier par défaut");
+        bCharger.addActionListener(new ActionListener() {
+            public void actionPerformed(final ActionEvent evt) {
+                parser.setInput(getFileContent(FILE_TEST));
+                form.setVisible(false);
+                showQuiz(parser);
+            }
+        });
+        BorderLayout layout = new BorderLayout();
+        form.getContentPane().setLayout(layout);
+        form.add(bOuvrir, BorderLayout.EAST);
+        form.add(bCharger, BorderLayout.WEST);
+        form.pack();
+        form.setVisible(true);
+    }
+    /**
+     * @param parser the wikimedia parser.
+     */
+    public static void showQuiz(final WikiversityParser parser) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -64,7 +107,6 @@ public final class Main {
             }
         });
     }
-
     /**
      * @param title the dialog title
      * @param message the message to show
@@ -80,21 +122,24 @@ public final class Main {
      * not specified.
      * @return String, the file content
      */
-    private static String loadFile() {
-        BufferedReader br = null;
+    private static String getFilePath() {
         JFileChooser chooser = new JFileChooser();
-        String line, output = "", fileName = "File_Test/test.txt";
 
         int res = chooser.showOpenDialog(null);
         if (res == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();
-            fileName = file.getPath();
+            return file.getPath();
         } else {
-            JOptionPane.showMessageDialog(null,
-                    "Vous avez annuler l'operation,\n"
-                            + "le fichier par défaut sera chargé",
-                    "Choix du fichier", JOptionPane.WARNING_MESSAGE);
+            return FILE_TEST;
         }
+    }
+    /**
+     * @param fileName the file name.
+     * @return String
+     */
+    private static String getFileContent(final String fileName) {
+        BufferedReader br = null;
+        String line, output = "";
         try {
             try {
                 br = new BufferedReader(new InputStreamReader(
