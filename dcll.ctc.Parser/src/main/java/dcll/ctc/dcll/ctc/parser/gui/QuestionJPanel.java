@@ -1,7 +1,4 @@
-/**
- * 
- */
-package GUI;
+package dcll.ctc.dcll.ctc.parser.gui;
 import javax.swing.BorderFactory;
 
 import org.tsaap.questions.Question;

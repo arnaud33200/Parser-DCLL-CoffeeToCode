@@ -1,9 +1,4 @@
-/**
- * 
- */
-package GUI;
-
-
+package dcll.ctc.dcll.ctc.parser.gui;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,9 +9,9 @@ import java.io.InputStreamReader;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import dcll.ctc.dcll.ctc.Parser.NoInputException;
-import dcll.ctc.dcll.ctc.Parser.BadSyntaxException;
-import dcll.ctc.dcll.ctc.Parser.WikiversityParser;
+import dcll.ctc.dcll.ctc.parser.BadSyntaxException;
+import dcll.ctc.dcll.ctc.parser.NoInputException;
+import dcll.ctc.dcll.ctc.parser.WikiversityParser;
 
 /**
  * @author alpha oumar binta diallo

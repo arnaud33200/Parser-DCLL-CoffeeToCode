@@ -1,8 +1,4 @@
-/**
- * 
- */
-package GUI;
-
+package dcll.ctc.dcll.ctc.parser.gui;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +6,7 @@ import org.tsaap.questions.Answer;
 import org.tsaap.questions.AnswerBlock;
 import org.tsaap.questions.Question;
 
-import GUI.AnswerModel.CheckBoxAnswer;
+import dcll.ctc.dcll.ctc.parser.gui.model.CheckBoxAnswer;
 
 /**
  * @author alpha oumar binta diallo

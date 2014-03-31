@@ -1,8 +1,4 @@
-/**
- * 
- */
-package GUI;
-
+package dcll.ctc.dcll.ctc.parser.gui;
 import java.util.ArrayList;
 import java.util.List;
 
