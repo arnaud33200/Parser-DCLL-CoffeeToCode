@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -79,9 +80,8 @@ public final class Main {
      * not specified.
      * @return String, the file content
      */
-    @SuppressWarnings("resource")
     private static String loadFile() {
-        BufferedReader br;
+        BufferedReader br = null;
         JFileChooser chooser = new JFileChooser();
         String line, output = "", fileName = "File_Test/test.txt";
 
@@ -96,20 +96,29 @@ public final class Main {
                     "Choix du fichier", JOptionPane.WARNING_MESSAGE);
         }
         try {
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(
-                    new File(fileName))));
+            try {
+                br = new BufferedReader(new InputStreamReader(
+                        new FileInputStream(
+                        new File(fileName)),
+                        "UTF-8"));
+            } catch (UnsupportedEncodingException e1) {
+                showError("Lecture Fichier test", e1.getMessage());
+            }
             try {
                 while ((line = br.readLine()) != null) {
                     output += line + "\n";
                 }
             } catch (IOException e) {
-                e.printStackTrace();
                 showError("Lecture Fichier test", e.getMessage());
             }
         } catch (FileNotFoundException e1) {
             showError("Chargement Fichier test", e1.getMessage());
         }
-
+        try {
+            br.close();
+        } catch (IOException e) {
+            showError("Fermeture Fichier test", e.getMessage());
+        }
         return output;
     }
 }
