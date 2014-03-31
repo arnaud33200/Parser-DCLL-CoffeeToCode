@@ -1,4 +1,5 @@
 package dcll.ctc.dcll.ctc.parser.gui;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +14,22 @@ import dcll.ctc.dcll.ctc.parser.gui.model.RadioButtonAnswer;
 /**
  * @author alpha oumar binta diallo
  */
+@SuppressWarnings("serial")
 public class ExclusiveChoicePanel extends QuestionJPanel {
+    /**
+     * a ButtonGroup list.
+     */
     private List<ButtonGroup> bgroupList = new ArrayList<ButtonGroup>();
-    private List<RadioButtonAnswer> radioList = new ArrayList<RadioButtonAnswer>();
-
-    public ExclusiveChoicePanel(Question question) {
+    /**
+     * a RadioButtonAnswer list.
+     */
+    private List<RadioButtonAnswer> radioList =
+            new ArrayList<RadioButtonAnswer>();
+    /**
+     * constructor with an answer.
+     * @param question the question to set
+     */
+    public ExclusiveChoicePanel(final Question question) {
         super(question);
         for (AnswerBlock answerBlock : getQuestion().getAnswerBlockList()) {
             ButtonGroup group = new ButtonGroup();
@@ -32,17 +44,18 @@ public class ExclusiveChoicePanel extends QuestionJPanel {
     }
 
     @Override
-    public float compute() {
+    public final float compute() {
         float credit = 0;
         for (RadioButtonAnswer ans : radioList) {
             float creditans = ans.getCorrection();
-            if (ans.isSelected())
+            if (ans.isSelected()) {
                 credit += creditans;
+            }
         }
         return credit;
     }
-
-    public void reset() {
+    @Override
+    public final void reset() {
         for (ButtonGroup element : bgroupList) {
             element.clearSelection();
         }

@@ -1,40 +1,46 @@
 package dcll.ctc.dcll.ctc.parser.gui;
+
 import javax.swing.BorderFactory;
 
 import org.tsaap.questions.Question;
 
 /**
  * @author alpha oumar binta diallo
- *
  */
+@SuppressWarnings("serial")
 public abstract class QuestionJPanel extends javax.swing.JPanel {
 
-	private static final long serialVersionUID = 1L;
-	private Question question;
-
-	/**
-     * Creates new form QuestionJPanel
-     * @param question
-     */
-    public QuestionJPanel(Question question) {
-    	this.question = question;
-    	this.setBorder(BorderFactory.createTitledBorder(question.getTitle()));
-    	this.setSize(getPreferredSize());
-    }
     /**
-     * this method return the question
+     * a question.
+     */
+    private Question question;
+
+    /**
+     * constructor with an answer.
+     * @param input the question
+     */
+    public QuestionJPanel(final Question input) {
+        this.question = input;
+        this.setBorder(BorderFactory.createTitledBorder(input.getTitle()));
+        this.setSize(getPreferredSize());
+    }
+
+    /**
+     * this method return the question.
      * @return Question
      */
-	protected Question getQuestion() {
-		return question;
-	}
-	/**
-	 * this method calculate the score made by the user
-	 * @return float
-	 */
-	public abstract float compute();
-	/**
-	 * this method reset the Question panel
-	 */
-	public abstract void reset();
+    protected final Question getQuestion() {
+        return question;
+    }
+
+    /**
+     * this method calculate the score made by the user.
+     * @return float
+     */
+    public abstract float compute();
+
+    /**
+     * this method reset the Question panel.
+     */
+    public abstract void reset();
 }
