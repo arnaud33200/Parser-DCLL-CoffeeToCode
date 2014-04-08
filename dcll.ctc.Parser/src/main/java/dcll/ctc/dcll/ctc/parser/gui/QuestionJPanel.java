@@ -29,7 +29,7 @@ public abstract class QuestionJPanel extends javax.swing.JPanel {
      * this method return the question.
      * @return Question
      */
-    protected final Question getQuestion() {
+    public Question getQuestion() {
         return question;
     }
 

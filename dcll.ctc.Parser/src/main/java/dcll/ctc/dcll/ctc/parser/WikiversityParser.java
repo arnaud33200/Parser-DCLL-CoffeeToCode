@@ -59,7 +59,7 @@ public class WikiversityParser implements Parser {
      * @throws BadSyntaxException If an input or output exception occurred
      * @return Quiz
      */
-    public final Quiz parse() throws NoInputException, BadSyntaxException {
+    public Quiz parse() throws NoInputException, BadSyntaxException {
         if (input.isEmpty()) {
             throw new NoInputException("The Input is empty");
         }
@@ -80,7 +80,7 @@ public class WikiversityParser implements Parser {
      * This method return the quiz.
      * @return Quiz
      */
-    public final Quiz getQuiz() {
+    public Quiz getQuiz() {
         return quiz;
     }
 
@@ -88,7 +88,7 @@ public class WikiversityParser implements Parser {
      * This method set the input of the parser.
      * @param str the String to set
      */
-    public final void setInput(final String str) {
+    public void setInput(final String str) {
         this.input = str;
     }
 
@@ -96,7 +96,7 @@ public class WikiversityParser implements Parser {
      * This method split the input to separate several questions.
      * @return String array
      */
-    private String[] splitQuestions() {
+    public String[] splitQuestions() {
         return input.split(LINE_SEPARATOR + LINE_SEPARATOR);
     }
 
@@ -105,7 +105,7 @@ public class WikiversityParser implements Parser {
      * @throws BadSyntaxException If an input or output exception occurred
      * @param str the String to check.
      */
-    private void checkInputFormat(final String str)
+    public void checkInputFormat(final String str)
             throws BadSyntaxException {
         String answerFormat = "[\\+-] (\\w|\\p{Punct})+";
         Pattern pAnswer = Pattern.compile("\\}" + LINE_SEPARATOR + "("
@@ -139,7 +139,7 @@ public class WikiversityParser implements Parser {
      * @param str a String
      * @return QuestionType
      */
-    private QuestionType getQuestionType(final String str) {
+    public QuestionType getQuestionType(final String str) {
         String type = str.substring(str.indexOf(QUESTION_TYPE_REG)
                 + QUESTION_TYPE_REG.length(), str.indexOf(QUESTION_END_REG));
         if (type.equals(EXCLUSIVE_CHOICE)) {
@@ -156,7 +156,7 @@ public class WikiversityParser implements Parser {
      * @param str a String
      * @return String
      */
-    private String getQuestionTitle(final String str) {
+    public String getQuestionTitle(final String str) {
         return str.substring(1, str.indexOf(QUESTION_TYPE_REG));
     }
 
@@ -165,7 +165,7 @@ public class WikiversityParser implements Parser {
      * @param str a String containing the questions
      * @return AnswerBlock
      */
-    private AnswerBlock getAnswerBlock(final String str) {
+    public AnswerBlock getAnswerBlock(final String str) {
         DefaultAnswerBlock answerBlock = new DefaultAnswerBlock();
         int correctAnswerNber = 0;
 
