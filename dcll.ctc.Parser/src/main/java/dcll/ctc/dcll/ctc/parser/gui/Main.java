@@ -122,7 +122,7 @@ public final class Main {
      * not specified.
      * @return String, the file content
      */
-    private static String getFilePath() {
+    public static String getFilePath() {
         JFileChooser chooser = new JFileChooser();
 
         int res = chooser.showOpenDialog(null);
@@ -137,7 +137,7 @@ public final class Main {
      * @param fileName the file name.
      * @return String
      */
-    private static String getFileContent(final String fileName) {
+    public static String getFileContent(final String fileName) {
         BufferedReader br = null;
         String line, output = "";
         try {

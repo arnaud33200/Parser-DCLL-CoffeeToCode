@@ -44,7 +44,7 @@ public class ExclusiveChoicePanel extends QuestionJPanel {
     }
 
     @Override
-    public final float compute() {
+    public float compute() {
         float credit = 0;
         for (RadioButtonAnswer ans : radioList) {
             float creditans = ans.getCorrection();
@@ -55,7 +55,7 @@ public class ExclusiveChoicePanel extends QuestionJPanel {
         return credit;
     }
     @Override
-    public final void reset() {
+    public void reset() {
         for (ButtonGroup element : bgroupList) {
             element.clearSelection();
         }

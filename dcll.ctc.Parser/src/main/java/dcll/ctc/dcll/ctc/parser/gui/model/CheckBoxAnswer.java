@@ -27,20 +27,20 @@ public class CheckBoxAnswer extends JCheckBox implements AnswerButton {
     /**
      * @return Answer the answer.
      */
-    public final Answer getAnswer() {
+    public Answer getAnswer() {
         return answer;
     }
     /**
      * @param ans the Answer to set.
      */
-    public final void setAnswer(final Answer ans) {
+    public void setAnswer(final Answer ans) {
         this.answer = ans;
 
     }
     /**
      * @return float the result of a question.
      */
-    public final float getCorrection() {
+    public float getCorrection() {
         float credit = answer.getPercentCredit();
         this.setOpaque(true);
         if (credit > 0) {
@@ -54,7 +54,7 @@ public class CheckBoxAnswer extends JCheckBox implements AnswerButton {
     /**
      * reset the answer of  question.
      */
-    public final void resetCorrection() {
+    public void resetCorrection() {
         this.setBackground(null);
         this.setEnabled(true);
         this.setSelected(false);

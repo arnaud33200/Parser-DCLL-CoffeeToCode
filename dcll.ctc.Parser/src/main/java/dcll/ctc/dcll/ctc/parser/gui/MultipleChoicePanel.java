@@ -36,7 +36,7 @@ public class MultipleChoicePanel extends QuestionJPanel {
     }
 
     @Override
-    public final float compute() {
+    public float compute() {
         float credit = 0;
         for (CheckBoxAnswer ans : checkboxList) {
             float creditans = ans.getCorrection();
@@ -48,7 +48,7 @@ public class MultipleChoicePanel extends QuestionJPanel {
     }
 
     @Override
-    public final void reset() {
+    public void reset() {
         for (CheckBoxAnswer ans : checkboxList) {
             ans.resetCorrection();
         }

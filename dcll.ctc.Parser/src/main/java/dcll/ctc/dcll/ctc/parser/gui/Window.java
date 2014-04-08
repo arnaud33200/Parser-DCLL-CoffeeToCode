@@ -78,7 +78,7 @@ public class Window extends JFrame {
      * This method is called from within the initComponents method to set up the
      * questions of quiz with their formats.
      */
-    private void intializeQuizView() {
+    public void intializeQuizView() {
         for (Question question : quiz.getQuestionList()) {
             QuestionJPanel panel = null;
             switch (question.getQuestionType()) {
@@ -99,7 +99,7 @@ public class Window extends JFrame {
     /**
      * This method is called from within the constructor to initialize the form.
      */
-    private void initComponents() {
+    public void initComponents() {
         bValider = new JButton();
         bReset = new JButton();
         jScrollPane1 = new JScrollPane();
@@ -149,7 +149,7 @@ public class Window extends JFrame {
      * this method compute the score.
      * @param evt an event
      */
-    private void bValiderActionPerformed(final ActionEvent evt) {
+    public void bValiderActionPerformed(final ActionEvent evt) {
         String resultat = "";
         int n = 1;
         for (QuestionJPanel question : panelList) {
@@ -164,7 +164,7 @@ public class Window extends JFrame {
      * this method reset the form.
      * @param evt an event
      */
-    private void bResetActionPerformed(final ActionEvent evt) {
+    public void bResetActionPerformed(final ActionEvent evt) {
         for (QuestionJPanel panel : panelList) {
             panel.reset();
         }
