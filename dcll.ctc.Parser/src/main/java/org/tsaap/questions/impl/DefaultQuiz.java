@@ -26,12 +26,14 @@ import java.util.List;
  * @author franck Silvestre
  */
 public class DefaultQuiz implements Quiz {
-
+/**
+ * List.
+ */
     private List<Question> questionList = new ArrayList<Question>();
 
 
     /**
-     * Add a question to the quiz
+     * Add a question to the quiz.
      * @param question the question to add
      */
     public void addQuestion(Question question) {
@@ -39,8 +41,7 @@ public class DefaultQuiz implements Quiz {
     }
 
     /**
-     * Get the question list of the quiz
-     *
+     * Get the question list of the quiz.
      * @return the question list
      */
     public List<Question> getQuestionList() {

@@ -31,9 +31,9 @@ import java.util.UUID;
  * @author franck Silvestre
  */
 public class DefaultQuestion implements Question {
-/**
- * title.
- */
+    /**
+     * title.
+     */
     private String title;
     /**
      * title.
@@ -52,9 +52,10 @@ public class DefaultQuestion implements Question {
      * title.
      */
     private QuestionType questionType = QuestionType.Undefined;
-/**
+
+    /**
      * Get the title of the question.
-     *
+     * 
      * @return the title of the question
      */
     public String getTitle() {
@@ -62,8 +63,7 @@ public class DefaultQuestion implements Question {
     }
 
     /**
-     * Get the question type
-     *
+     * Get the question type.
      * @return the question type
      */
     public QuestionType getQuestionType() {
@@ -71,21 +71,20 @@ public class DefaultQuestion implements Question {
     }
 
     /**
-     * Set the question type
-     * @param questionType the question type
+     * Set the question type.
+     * @param questionType
+     *            the question type
      */
     public void setQuestionType(QuestionType questionType) {
         this.questionType = questionType;
     }
-
 
     public void setTitle(String title) {
         this.title = title;
     }
 
     /**
-     * Get the question fragment list
-     *
+     * Get the question fragment list.
      * @return the question fragment list
      */
     public List<QuestionBlock> getBlockList() {
@@ -93,9 +92,9 @@ public class DefaultQuestion implements Question {
     }
 
     /**
-     * Add an answer fragment of the question to the question
-     *
-     * @param fragment the fragment to add
+     * Add an answer fragment of the question to the question.
+     * @param fragment
+     *            the fragment to add
      */
     public void addAnswerBlock(AnswerBlock fragment) {
         blockList.add(fragment);
@@ -103,9 +102,9 @@ public class DefaultQuestion implements Question {
     }
 
     /**
-     * Add an answer fragment of the question to the question
-     *
-     * @param fragment the fragment to add
+     * Add an answer fragment of the question to the question.
+     * @param fragment
+     *            the fragment to add
      */
     public void addTextBlock(TextBlock fragment) {
         blockList.add(fragment);
@@ -113,8 +112,7 @@ public class DefaultQuestion implements Question {
     }
 
     /**
-     * Get answer fragment list
-     *
+     * Get answer fragment list.
      * @return the answer fragment list
      */
     public List<AnswerBlock> getAnswerBlockList() {
@@ -122,13 +120,11 @@ public class DefaultQuestion implements Question {
     }
 
     /**
-     * Get the text fragment list
-     *
+     * Get the text fragment list.
      * @return the text fragment list
      */
     public List<TextBlock> getTextBlockList() {
         return textBlockList;
     }
-
 
 }

@@ -27,15 +27,23 @@ import java.util.List;
  * @author franck Silvestre
  */
 public class DefaultUserResponse implements UserResponse {
-
+/**
+ * userIdentifier.
+ */
     private String userIdentifier;
+    /**
+     * question.
+     */
     private Question question;
-    private List<UserAnswerBlock> userAnswerBlockList = new ArrayList<UserAnswerBlock>();
+    /**
+     * userAnswerBlockList.
+     */
+private List<UserAnswerBlock> userAnswerBlockList =
+new ArrayList<UserAnswerBlock>();
 
 
     /**
-     * Get the user identifier
-     *
+     * Get the user identifier.
      * @return the user identifier
      */
     public String getUserIdentifier() {
@@ -43,8 +51,7 @@ public class DefaultUserResponse implements UserResponse {
     }
 
     /**
-     * Get the question
-     *
+     * Get the question.
      * @return the question the response is for
      */
     public Question getQuestion() {

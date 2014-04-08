@@ -27,20 +27,25 @@ public class DefaultAnswer implements Answer {
  */
     private String textValue;
     /**
-     * 
      */
     private Float percentCredit;
+    /**
+     * identifier.
+     */
     private String identifier;
+    /**
+     * feedback.
+     */
     private String feedback;
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) { return true; }
+        if (o == null || getClass() != o.getClass()) { return false; }
 
         DefaultAnswer that = (DefaultAnswer) o;
 
-        if (!identifier.equals(that.identifier)) return false;
+        if (!identifier.equals(that.identifier)) { return false; }
 
         return true;
     }
@@ -51,8 +56,7 @@ public class DefaultAnswer implements Answer {
     }
 
     /**
-     * Get the text value of the answer
-     *
+     * Get the text value of the answer.
      * @return the text value of the answer
      */
     public String getTextValue() {
@@ -60,7 +64,7 @@ public class DefaultAnswer implements Answer {
     }
 
     /**
-     * Set te text value of the answer
+     * Set te text value of the answer.
      * @param textValue the new text value
      */
     public void setTextValue(String textValue) {
@@ -68,8 +72,7 @@ public class DefaultAnswer implements Answer {
     }
 
     /**
-     * Get the percent credit the answer represents in the answer set
-     *
+     * Get the percent credit the answer represents in the answer set.
      * @return the percent credit
      */
     public Float getPercentCredit() {
@@ -77,7 +80,7 @@ public class DefaultAnswer implements Answer {
     }
 
     /**
-     * Set the percent credit of the answer
+     * Set the percent credit of the answer.
      * @param percentCredit the percent credit
      */
     public void setPercentCredit(Float percentCredit) {
@@ -85,8 +88,7 @@ public class DefaultAnswer implements Answer {
     }
 
     /**
-     * Get the identifier of the answer relative to the question
-     *
+     * Get the identifier of the answer relative to the question.
      * @return the identifier
      */
     public String getIdentifier() {
@@ -94,7 +96,7 @@ public class DefaultAnswer implements Answer {
     }
 
     /**
-     * Set the identifier
+     * Set the identifier.
      * @param identifier  the new identifier
      */
     public void setIdentifier(String identifier) {
@@ -102,7 +104,7 @@ public class DefaultAnswer implements Answer {
     }
 
     /**
-     * Set the feedback
+     * Set the feedback.
      * @param feedback
      */
     public void setFeedback(String feedback) {
@@ -110,7 +112,7 @@ public class DefaultAnswer implements Answer {
     }
 
     /**
-     * Get the feedback to present to a student for this answer
+     * Get the feedback to present to a student for this answer.
      *
      * @return
      */
