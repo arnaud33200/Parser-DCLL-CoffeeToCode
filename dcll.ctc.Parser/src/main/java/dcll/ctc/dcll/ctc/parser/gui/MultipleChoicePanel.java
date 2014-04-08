@@ -38,11 +38,18 @@ public class MultipleChoicePanel extends QuestionJPanel {
     @Override
     public final float compute() {
         float credit = 0;
+        boolean badAnswer = false;
         for (CheckBoxAnswer ans : checkboxList) {
             float creditans = ans.getCorrection();
             if (ans.isSelected()) {
                 credit += creditans;
-            }
+                if(!badAnswer && creditans <=0) {
+                	badAnswer = true;
+                }
+            } 
+        }
+        if(badAnswer) {
+        	credit = 0;
         }
         return credit;
     }

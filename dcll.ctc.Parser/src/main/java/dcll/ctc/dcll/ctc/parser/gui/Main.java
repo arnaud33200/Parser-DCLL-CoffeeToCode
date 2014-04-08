@@ -1,6 +1,7 @@
 package dcll.ctc.dcll.ctc.parser.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -66,7 +67,8 @@ public final class Main {
         }
         form.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         form.setTitle("Wikimedia Quiz");
-        form.setSize(form.getPreferredSize());
+        form.setSize(600,400);
+        form.setMinimumSize(new Dimension(600,400));
         form.setResizable(false);
         bOuvrir.setText("Charger un fichier");
         bOuvrir.addActionListener(new ActionListener() {
