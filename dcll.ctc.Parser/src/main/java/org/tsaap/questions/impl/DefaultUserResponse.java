@@ -60,7 +60,6 @@ new ArrayList<UserAnswerBlock>();
 
     /**
      * Get the user answer block list
-     *
      * @return the user answer block list
      */
     public List<UserAnswerBlock> getUserAnswerBlockList() {
