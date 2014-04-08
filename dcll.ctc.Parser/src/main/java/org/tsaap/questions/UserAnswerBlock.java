@@ -22,18 +22,18 @@ import java.util.List;
  * @author franck Silvestre
  */
 public interface UserAnswerBlock {
-
     /**
-     * Get the list of answers given y the user for the current answer block
+     * Get the list of answers given y the user for the current answer block.
      * @return
      */
-    public List<Answer> getAnswerList();
+    List<Answer> getAnswerList();
 
     /**
-     * Get the percent credit the user receive for his answers on the current block
+     * Get the percent credit the user receive
+     *  for his answers on the current block.
      * @return the percent credit
      */
-    public Float evaluatePercentCredit();
+    Float evaluatePercentCredit();
 
 
 }

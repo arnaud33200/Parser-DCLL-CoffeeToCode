@@ -21,35 +21,35 @@ import java.util.List;
 /**
  * @author franck Silvestre
  */
-public interface UserResponse {
+ public interface UserResponse {
 
     /**
-     * Get the user identifier
+     * Get the user identifier.
      *
      * @return the user identifier
      */
-    public String getUserIdentifier();
+     String getUserIdentifier();
 
     /**
-     * Get the question
+     * Get the question.
      *
      * @return the question the response is for
      */
-    public Question getQuestion();
+     Question getQuestion();
 
     /**
-     * Get the user answer block list
+     * Get the user answer block list.
      *
      * @return the user answer block list
      */
-    public List<UserAnswerBlock> getUserAnswerBlockList();
+     List<UserAnswerBlock> getUserAnswerBlockList();
 
     /**
-     * Get the percent credit the user receive for his answers on the question
+     * Get the percent credit the user receive for his answers on the question.
      *
      * @return the percent credit
      */
-    public Float evaluatePercentCredit();
+     Float evaluatePercentCredit();
 
 
 }

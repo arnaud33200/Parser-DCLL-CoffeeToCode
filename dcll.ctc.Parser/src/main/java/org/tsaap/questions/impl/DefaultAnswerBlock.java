@@ -26,11 +26,13 @@ import java.util.List;
  * @author franck Silvestre
  */
 public class DefaultAnswerBlock implements AnswerBlock {
-
+/**
+ * get answerList.
+ */
     private List<Answer> answerList = new ArrayList<Answer>();
 
     /**
-     * Get the answer list that compose the answer block
+     * Get the answer list that compose the answer block.
      *
      * @return the answer list of the block
      */
@@ -39,7 +41,7 @@ public class DefaultAnswerBlock implements AnswerBlock {
     }
 
     /**
-     * Add answer to the answer block
+     * Add answer to the answer block.
      * @param answer the answer to add
      */
     public void addAnswer(Answer answer) {

@@ -22,8 +22,13 @@ import org.tsaap.questions.Answer;
  * @author franck Silvestre
  */
 public class DefaultAnswer implements Answer {
-
+/**
+* gg.
+ */
     private String textValue;
+    /**
+     * 
+     */
     private Float percentCredit;
     private String identifier;
     private String feedback;

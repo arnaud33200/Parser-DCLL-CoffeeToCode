@@ -3,86 +3,86 @@ package org.tsaap.questions;
 /**
  * @author franck Silvestre
  */
-public interface QuizContentHandler {
+ public  interface QuizContentHandler {
 
     /**
-     * Receive notification of the beginning of a quiz
+     * Receive notification of the beginning of a quiz.
      */
-    public void onStartQuiz();
+      void onStartQuiz();
 
     /**
-     * Receive notification of the end of a quiz
+     * Receive notification of the end of a quiz.
      */
-    public void onEndQuiz();
+      void onEndQuiz();
 
     /**
-     * Receive notification of the beginning of a question
+     * Receive notification of the beginning of a question.
      */
-    public void onStartQuestion();
+      void onStartQuestion();
 
     /**
-     * Receive notification of the end of a question
+     * Receive notification of the end of a question.
      */
-    public void onEndQuestion();
-
-
-    /**
-     * Receive notification of a new string
-     */
-    public void onString(String str);
-
-    /**
-     * Receive notification of the beginning of a title
-     */
-    public void onStartTitle();
-
-    /**
-     * Receive notification of the end of a title
-     */
-    public void onEndTitle();
-
-    /**
-     * Receive notification of the beginning of an answer block
-     */
-    public void onStartAnswerBlock();
-
-    /**
-     * Receive notification of the end of an answer block
-     */
-    public void onEndAnswerBlock();
-
-    /**
-     * Receive notification of the beginning of an answer
-     */
-    public void onStartAnswer(String prefix);
+      void onEndQuestion();
 
 
     /**
-     * Receive notification of the end of an answer
+     * Receive notification of a new string.
      */
-    public void onEndAnswer();
+      void onString(String str);
 
     /**
-     * Notification of the beginning of a credit specification
+     * Receive notification of the beginning of a title.
      */
-    public void onStartAnswerCredit();
+      void onStartTitle();
+
+    /**
+     * Receive notification of the end of a title.
+     */
+      void onEndTitle();
+
+    /**
+     * Receive notification of the beginning of an answer block.
+     */
+      void onStartAnswerBlock();
+
+    /**
+     * Receive notification of the end of an answer block.
+     */
+      void onEndAnswerBlock();
+
+    /**
+     * Receive notification of the beginning of an answer.
+     */
+      void onStartAnswer(String prefix);
 
 
     /**
-     * Notification of the end of a credit specification
+     * Receive notification of the end of an answer.
      */
-    public void onEndAnswerCredit();
+      void onEndAnswer();
+
+    /**
+     * Notification of the beginning of a credit specification.
+     */
+      void onStartAnswerCredit();
 
 
     /**
-     * Receive notification of the beginning feedback
+     * Notification of the end of a credit specification.
      */
-    public void onStartAnswerFeedBack();
+      void onEndAnswerCredit();
 
 
     /**
-     * Receive notification of the end of a feedback
+     * Receive notification of the beginning feedback.
      */
-    public void onEndAnswerFeedBack();
+      void onStartAnswerFeedBack();
+
+
+    /**
+     * Receive notification of the end of a feedback.
+     */
+      void onEndAnswerFeedBack();
 
 }

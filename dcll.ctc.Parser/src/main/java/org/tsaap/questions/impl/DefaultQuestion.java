@@ -31,15 +31,29 @@ import java.util.UUID;
  * @author franck Silvestre
  */
 public class DefaultQuestion implements Question {
-
+/**
+ * title.
+ */
     private String title;
-    private List<QuestionBlock> blockList = new ArrayList<QuestionBlock>();
-    private List<AnswerBlock> answerBlockList = new ArrayList<AnswerBlock>();
-    private List<TextBlock> textBlockList = new ArrayList<TextBlock>();
-    private QuestionType questionType = QuestionType.Undefined;
-
     /**
-     * Get the title of the question
+     * title.
+     */
+    private List<QuestionBlock> blockList = new ArrayList<QuestionBlock>();
+    /**
+     * title.
+     */
+
+    private List<AnswerBlock> answerBlockList = new ArrayList<AnswerBlock>();
+    /**
+     * title.
+     */
+    private List<TextBlock> textBlockList = new ArrayList<TextBlock>();
+    /**
+     * title.
+     */
+    private QuestionType questionType = QuestionType.Undefined;
+/**
+     * Get the title of the question.
      *
      * @return the title of the question
      */

@@ -15,11 +15,14 @@
  */
 
 package org.tsaap.questions;
-
 /**
  * @author franck Silvestre
  */
 public interface TextBlock extends QuestionBlock {
 
-    public String getText();
+/**
+ * Get StingText.
+*@return  Text
+ */
+String getText();
 }
