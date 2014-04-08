@@ -20,8 +20,12 @@ package org.tsaap.questions;
  * @author franck Silvestre
  */
 public enum QuestionType {
-
-    Undefined(0),
+	/**
+     * Get the question block list.
+     *
+     * @return the question block list
+     */
+	Undefined(0),
     ExclusiveChoice(1),
     MultipleChoice(2),
     TrueFalse(3),
@@ -34,7 +38,7 @@ public enum QuestionType {
     }
 
     /**
-     * Get the code of que question type
+     * Get the code of que question type.
      *
      * @return the code
      */

@@ -21,42 +21,42 @@ import java.util.List;
 /**
  * @author franck Silvestre
  */
-public interface Question {
+   public interface Question {
 
     /**
-     * Get the title of the question
+     * Get the title of the question.
      *
-     * @return the title of the question
+     * @return the title of the question.
      */
-    public String getTitle();
+      String getTitle();
 
     /**
-     * Get the question block list
+     * Get the question block list.
      *
      * @return the question block list
      */
-    public List<QuestionBlock> getBlockList();
+      List<QuestionBlock> getBlockList();
 
     /**
-     * Get the question text block list
+     * Get the question text block list.
      *
      * @return the text question block list
      */
-    public List<TextBlock> getTextBlockList();
+      List<TextBlock> getTextBlockList();
 
     /**
-     * Get the question text block list
+     * Get the question text block list.
      *
      * @return the text question block list
      */
-    public List<AnswerBlock> getAnswerBlockList();
+      List<AnswerBlock> getAnswerBlockList();
 
     /**
-     * Get the question type
+     * Get the question type.
      *
      * @return the question type
      */
-    public QuestionType getQuestionType();
+      QuestionType getQuestionType();
 
 
 }

@@ -43,7 +43,6 @@ public class ExclusiveChoicePanel extends QuestionJPanel {
         }
     }
 
-    @Override
     public float compute() {
         float credit = 0;
         for (RadioButtonAnswer ans : radioList) {
