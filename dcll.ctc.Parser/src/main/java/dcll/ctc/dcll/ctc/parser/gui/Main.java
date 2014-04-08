@@ -28,13 +28,24 @@ import dcll.ctc.dcll.ctc.parser.WikiversityParser;
  */
 public final class Main {
     /**
+     * Largeur de la fenêtre.
+     */
+    private static final int WINDOW_HEIGHT = 400;
+    /**
+     * Longueur de la fenêtre.
+     */
+    private static final int WINDOW_WIDTH = 600;
+    /**
      * the default file test.
      */
     private static final String FILE_TEST = "File_Test/test.txt";
+
     /**
      * Default constructor.
      */
-    private Main() { }
+    private Main() {
+    }
+
     /**
      * @param args the args.
      */
@@ -67,8 +78,8 @@ public final class Main {
         }
         form.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         form.setTitle("Wikimedia Quiz");
-        form.setSize(600,400);
-        form.setMinimumSize(new Dimension(600,400));
+        form.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        form.setMinimumSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
         form.setResizable(false);
         bOuvrir.setText("Charger un fichier");
         bOuvrir.addActionListener(new ActionListener() {
@@ -93,8 +104,10 @@ public final class Main {
         form.pack();
         form.setVisible(true);
     }
+
     /**
-     * @param parser the wikimedia parser.
+     * @param parser
+     *            the wikimedia parser.
      */
     public static void showQuiz(final WikiversityParser parser) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -109,9 +122,12 @@ public final class Main {
             }
         });
     }
+
     /**
-     * @param title the dialog title
-     * @param message the message to show
+     * @param title
+     *            the dialog title
+     * @param message
+     *            the message to show
      */
     public static void showError(final String title, final String message) {
         JOptionPane.showMessageDialog(null, message, title,
@@ -135,8 +151,10 @@ public final class Main {
             return FILE_TEST;
         }
     }
+
     /**
-     * @param fileName the file name.
+     * @param fileName
+     *            the file name.
      * @return String
      */
     public static String getFileContent(final String fileName) {
@@ -145,9 +163,7 @@ public final class Main {
         try {
             try {
                 br = new BufferedReader(new InputStreamReader(
-                        new FileInputStream(
-                        new File(fileName)),
-                        "UTF-8"));
+                        new FileInputStream(new File(fileName)), "UTF-8"));
             } catch (UnsupportedEncodingException e1) {
                 showError("Lecture Fichier test", e1.getMessage());
             }

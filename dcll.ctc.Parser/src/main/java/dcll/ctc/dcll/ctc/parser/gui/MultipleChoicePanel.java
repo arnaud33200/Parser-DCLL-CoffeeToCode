@@ -43,13 +43,13 @@ public class MultipleChoicePanel extends QuestionJPanel {
             float creditans = ans.getCorrection();
             if (ans.isSelected()) {
                 credit += creditans;
-                if(!badAnswer && creditans <=0) {
-                	badAnswer = true;
+                if (!badAnswer && creditans <= 0) {
+                badAnswer = true;
                 }
-            } 
+            }
         }
-        if(badAnswer) {
-        	credit = 0;
+        if (badAnswer) {
+        credit = 0;
         }
         return credit;
     }
