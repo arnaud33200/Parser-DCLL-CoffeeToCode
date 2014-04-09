@@ -1,4 +1,4 @@
-package dcll.ctc.dcll.ctc.parser.test;
+package dcll.ctc.dcll.ctc.Parser.test;
 
 import org.tsaap.questions.QuestionType;
 import org.tsaap.questions.impl.DefaultQuiz;

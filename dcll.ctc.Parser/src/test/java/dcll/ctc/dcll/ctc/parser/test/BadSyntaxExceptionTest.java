@@ -1,4 +1,4 @@
-package dcll.ctc.dcll.ctc.parser.test;
+package dcll.ctc.dcll.ctc.Parser.test;
 
 import junit.framework.TestCase;
 import dcll.ctc.dcll.ctc.parser.BadSyntaxException;

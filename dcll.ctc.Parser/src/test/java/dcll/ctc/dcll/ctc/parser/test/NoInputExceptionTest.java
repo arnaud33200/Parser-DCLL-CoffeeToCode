@@ -1,4 +1,4 @@
-package dcll.ctc.dcll.ctc.parser.test;
+package dcll.ctc.dcll.ctc.Parser.test;
 
 import dcll.ctc.dcll.ctc.parser.NoInputException;
 import junit.framework.TestCase;
