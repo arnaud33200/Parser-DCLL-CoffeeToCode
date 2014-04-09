@@ -38,11 +38,18 @@
 		<configLocation>CheckStyle_Config_C2C.xml</configLocation>					
 	</configuration>
         </plugin>
-        <plugin>
-        	<groupId>org.codehaus.mojo</groupId>
-        	<artifactId>findbugs-maven-plugin</artifactId>
-        	<version>2.5.2</version>
-        </plugin>
+       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <threshold>Normal</threshold>
+          <effort>Default</effort>
+          <excludeFilterFile>Findbugs_Config-Exclude_C2C.xml</excludeFilterFile>
+                    <includeTests>true</includeTests>
+          
+        </configuration>
+      </plugin>
         <plugin>
         	<groupId>org.codehaus.mojo</groupId>
         	<artifactId>cobertura-maven-plugin</artifactId>

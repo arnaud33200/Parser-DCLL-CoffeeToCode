@@ -25,18 +25,18 @@ public class DefaultAnswer implements Answer {
 /**
 * gg.
  */
-    private String textValue;
+    private String textValue = "";
     /**
      */
     private Float percentCredit;
     /**
      * identifier.
      */
-    private String identifier;
+    private String identifier = "";
     /**
      * feedback.
      */
-    private String feedback;
+    private String feedback = "";
 
     @Override
     public boolean equals(final Object o) {

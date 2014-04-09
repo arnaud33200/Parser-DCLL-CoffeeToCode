@@ -1,5 +1,17 @@
-<FindBugsFilter>
-  <Match>
-    <Method returns="void" name="main" params="java.lang.String[]" />
-  </Match>
-<FindBugsFilter>
+<FindBugsFilter>  
+    <!-- Desactiver pour tout -->  
+     <Match>  
+        <Bug pattern="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR"/>  
+     </Match>  
+    <!-- Desactiver uniquement pour les test -->  
+    <Match>  
+        <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON, SIC_INNER_SHOULD_BE_STATIC_NEEDS_THIS" />  
+        <Class name="~.*Test\$.*" />  
+    </Match>  
+    
+     <Match>
+       <Bug category="PERFORMANCE" />
+     </Match>
+
+    
+</FindBugsFilter>  
