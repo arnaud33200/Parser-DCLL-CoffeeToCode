@@ -46,7 +46,6 @@
           <threshold>Normal</threshold>
           <effort>Default</effort>
           <excludeFilterFile>Findbugs_Config-Exclude_C2C.xml</excludeFilterFile>
-                    <includeTests>true</includeTests>
           
         </configuration>
       </plugin>
