@@ -23,21 +23,19 @@ import java.io.Reader;
  * @author franck Silvestre
  */
 public interface QuizReader {
+    /**
+     * Parse an input source describing a quiz.
+     * @param reader
+     *            the input source
+     * @throws IOException the IOException
+     * @throws QuizReaderException the IOException
+     */
+    void parse(Reader reader) throws IOException, QuizReaderException;
 
-	/**
-	 * Parse an input source describing a quiz
-	 * @param reader
-	 *            the input source
-	 * @throws IOException
-	 * @throws QuizReaderException
-	 */
-	void parse(Reader reader) throws IOException, QuizReaderException;
-
-	/**
-	 * Get the quiz content handler that is notified during the parsing. Design
-	 * inspired from SAX API.
-	 * 
-	 * @return the quiz content handler
-	 */
-	QuizContentHandler getQuizContentHandler();
+    /**
+     * Get the quiz content handler that is notified during the parsing. Design
+     * inspired from SAX API.
+     * @return the quiz content handler
+     */
+    QuizContentHandler getQuizContentHandler();
 }

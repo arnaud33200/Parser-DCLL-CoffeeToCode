@@ -17,7 +17,6 @@
 package org.tsaap.questions.impl;
 
 import org.tsaap.questions.Answer;
-import org.tsaap.questions.AnswerBlock;
 import org.tsaap.questions.UserAnswerBlock;
 
 import java.util.ArrayList;
@@ -27,23 +26,25 @@ import java.util.List;
  * @author franck Silvestre
  */
 public class DefaultUserAnswerBlock implements UserAnswerBlock {
-
+/**
+ * answerList.
+ */
     private List<Answer> answerList = new ArrayList<Answer>();
 
 
     /**
-     * Get the list of answers given y the user for the current answer block
+     * Get the list of answers given y the user for the current answer block.
      *
-     * @return
+     * @return answerList
      */
     public List<Answer> getAnswerList() {
         return answerList;
     }
 
     /**
-     * Get the percent credit the user receive for his answers on the current block
-     *
-     * @return
+     * Get the percent credit the user receive for
+     * his answers on the current block.
+     * @return res
      */
     public Float evaluatePercentCredit() {
         Float res = 0f;

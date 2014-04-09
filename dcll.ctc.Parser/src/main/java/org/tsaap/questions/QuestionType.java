@@ -20,31 +20,32 @@ package org.tsaap.questions;
  * @author franck Silvestre
  */
 public enum QuestionType {
-	/**
+    /**
      * Get the question block list.
-     *
      * @return the question block list
      */
-	Undefined(0),
-    ExclusiveChoice(1),
-    MultipleChoice(2),
-    TrueFalse(3),
-    FillInTheBlank(4);
-
+Undefined(0), ExclusiveChoice(1),
+/**
+ *.
+ */
+MultipleChoice(2), TrueFalse(3), FillInTheBlank(4);
+/**
+ * int.
+ */
     private int code;
-
-    QuestionType(int code) {
-        this.code = code;
+/**
+ * code.
+ * @param pcode the code
+ */
+    QuestionType(final int pcode) {
+        this.code = pcode;
     }
 
     /**
      * Get the code of que question type.
-     *
      * @return the code
      */
     public int getCode() {
         return code;
     }
 }
-
-

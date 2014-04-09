@@ -39,7 +39,7 @@ public class DefaultAnswer implements Answer {
     private String feedback;
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) { return true; }
         if (o == null || getClass() != o.getClass()) { return false; }
 
@@ -105,16 +105,16 @@ public class DefaultAnswer implements Answer {
 
     /**
      * Set the feedback.
-     * @param feedback
+     * @param pfeedback the feedback
      */
-    public void setFeedback(String feedback) {
-        this.feedback = feedback;
+    public void setFeedback(final String pfeedback) {
+        this.feedback = pfeedback;
     }
 
     /**
      * Get the feedback to present to a student for this answer.
      *
-     * @return
+     * @return feedback
      */
     public String getFeedBack() {
         return feedback;

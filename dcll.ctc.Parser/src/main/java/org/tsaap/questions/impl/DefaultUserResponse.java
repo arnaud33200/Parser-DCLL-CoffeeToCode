@@ -59,7 +59,7 @@ new ArrayList<UserAnswerBlock>();
     }
 
     /**
-     * Get the user answer block list
+     * Get the user answer block list.
      * @return the user answer block list
      */
     public List<UserAnswerBlock> getUserAnswerBlockList() {
@@ -68,7 +68,7 @@ new ArrayList<UserAnswerBlock>();
 
 
     /**
-     * Set the user identifier
+     * Set the user identifier.
      * @param userIdentifier the user identifier
      */
     public void setUserIdentifier(String userIdentifier) {
@@ -76,7 +76,7 @@ new ArrayList<UserAnswerBlock>();
     }
 
     /**
-     * Set the question
+     * Set the question.
      * @param question the question
      */
     public void setQuestion(Question question) {
@@ -86,13 +86,13 @@ new ArrayList<UserAnswerBlock>();
 
 
     /**
-     * Get the percent credit the user receive for his answers on the question
+     * Get the percent credit the user receive for his answers on the question.
      *
-     * @return
+     * @return res
      */
     public Float evaluatePercentCredit() {
         Float res = 0f;
-        for(UserAnswerBlock userAnswerBlock : userAnswerBlockList) {
+        for (UserAnswerBlock userAnswerBlock : userAnswerBlockList) {
           res += userAnswerBlock.evaluatePercentCredit();
         }
         return res;

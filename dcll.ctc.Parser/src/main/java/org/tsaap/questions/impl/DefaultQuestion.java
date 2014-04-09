@@ -21,11 +21,8 @@ import org.tsaap.questions.Question;
 import org.tsaap.questions.QuestionBlock;
 import org.tsaap.questions.QuestionType;
 import org.tsaap.questions.TextBlock;
-import org.tsaap.questions.impl.*;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @author franck Silvestre
@@ -55,7 +52,6 @@ public class DefaultQuestion implements Question {
 
     /**
      * Get the title of the question.
-     * 
      * @return the title of the question
      */
     public String getTitle() {
@@ -72,15 +68,18 @@ public class DefaultQuestion implements Question {
 
     /**
      * Set the question type.
-     * @param questionType
+     * @param pquestionType
      *            the question type
      */
-    public void setQuestionType(QuestionType questionType) {
-        this.questionType = questionType;
+    public void setQuestionType(QuestionType pquestionType) {
+        this.questionType = pquestionType;
     }
-
-    public void setTitle(String title) {
-        this.title = title;
+/**
+ * settitle.
+ * @param ptitle the title
+ */
+    public void setTitle(String ptitle) {
+        this.title = ptitle;
     }
 
     /**
