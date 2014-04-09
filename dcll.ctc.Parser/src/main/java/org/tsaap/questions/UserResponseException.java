@@ -20,8 +20,11 @@ package org.tsaap.questions;
  * @author franck Silvestre
  */
 public class UserResponseException extends Exception {
-
-    public UserResponseException(String message) {
+/**
+ * Default constructor or UserResponseException.
+ * @param message the message
+ */
+    public UserResponseException(final String message) {
         super(message);
     }
 
