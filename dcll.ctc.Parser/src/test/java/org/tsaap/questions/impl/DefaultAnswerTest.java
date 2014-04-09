@@ -12,6 +12,10 @@ public class DefaultAnswerTest extends TestCase {
 		DefaultQuiz q = new DefaultQuiz();
 		assertFalse(d.equals(q));
 		assertTrue(d.equals(e));
+		assertTrue(d.equals(d));
+		e.setIdentifier("you");
+		assertFalse(d.equals(e));
+		assertFalse(d.equals(null));
 	}
 	
 	public void testhashCode(){
